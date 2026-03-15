@@ -75,8 +75,14 @@ find_package(Threads REQUIRED)
 set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CMAKE_COMMAND} -E time")
 set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK "${CMAKE_COMMAND} -E time")
 
+# OpenSSL
+find_package(OpenSSL REQUIRED)
+
+# MySQL
+#find_package(MySQL)
+
 # find mysql client binary (needed by genrev)
-find_package(MySQL OPTIONAL_COMPONENTS binary)
+#find_package(MySQL OPTIONAL_COMPONENTS binary)
 
 # Find revision ID and hash of the sourcetree
 include(cmake/genrev.cmake)
